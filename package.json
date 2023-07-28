@@ -12,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@commitlint/cli": "^17.6.7",
+    "@commitlint/config-conventional": "^17.6.7",
     "@rollup/plugin-commonjs": "^25.0.3",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@rollup/plugin-typescript": "^11.1.2",
@@ -19,6 +21,8 @@
     "@typescript-eslint/parser": "^6.2.0",
     "eslint": "^8.45.0",
     "eslint-plugin-react": "^7.33.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
     "prettier": "^3.0.0",
     "rollup": "^3.26.3",
     "tslib": "^2.6.1",
@@ -39,9 +43,9 @@
     ]
   },
   "lint-staged": {
-    "*.{ts, js}": [
-      "node --max_old_space_size=8192 npx prettier -w",
-      "node --max_old_space_size=8192 npx eslint --fix --color",
+    "*.{ts,js}": [
+      "node --max_old_space_size=8192 ./node_modules/.bin/prettier -w",
+      "node --max_old_space_size=8192 ./node_modules/.bin/eslint --fix --color",
       "git add"
     ]
   }
